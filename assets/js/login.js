@@ -40,7 +40,7 @@ $('#form_reg').on('submit', function(e) {
             username: $('#form_reg [name=username]').val(),
             password: $('#form_reg [name=password]').val()
         }
-        $.post('http://api-breakingnews-web.itheima.net/api/reguser', data, function(res) {
+        $.post('/api/reguser', data, function(res) {
             if (res.status != 0) {
                 // return console.log(res.message);
                 // layer方法
@@ -57,7 +57,7 @@ $('#form_login').on('submit', function(e) {
     // 阻止默认行为
     e.preventDefault()
     $.ajax({
-        url: 'http://api-breakingnews-web.itheima.net/api/login',
+        url: '/api/login',
         method: 'POST',
         data: $(this).serialize(),
         success: function(res) {
